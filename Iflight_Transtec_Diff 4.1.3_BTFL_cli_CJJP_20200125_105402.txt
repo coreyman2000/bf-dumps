@@ -1,0 +1,100 @@
+# 
+
+# diff
+
+# version
+# Betaflight / STM32F405 (S405) 4.1.3 Jan 16 2020 / 11:34:00 (543a5e1ba) MSP API: 1.42
+# manufacturer_id: FPVM   board_name: BETAFLIGHTF4   custom defaults: YES
+
+# start the command batch
+batch start
+
+board_name BETAFLIGHTF4
+manufacturer_id FPVM
+
+# name: CJJP
+
+# feature
+feature -RX_PARALLEL_PWM
+feature -AIRMODE
+feature RX_SERIAL
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# serial
+serial 0 2048 115200 57600 0 19200
+serial 1 64 115200 57600 0 115200
+serial 5 64 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1675 2075 0 0
+aux 1 1 1 900 1300 0 0
+aux 2 2 1 1300 1700 0 0
+aux 3 13 2 1700 2100 0 0
+aux 4 28 1 1300 2100 0 0
+aux 5 35 2 1700 2100 0 0
+
+# vtxtable
+vtxtable bands 6
+vtxtable channels 8
+vtxtable band 1 BOSCAM_A A FACTORY 5865 5845 5825 5805 5785 5765 5745 5725
+vtxtable band 2 BOSCAM_B B FACTORY 5733 5752 5771 5790 5809 5828 5847 5866
+vtxtable band 3 BOSCAM_E E FACTORY 5705 5685 5665    0 5885 5905    0    0
+vtxtable band 4 FATSHARK F FACTORY 5740 5760 5780 5800 5820 5840 5860 5880
+vtxtable band 5 RACEBAND R FACTORY 5658 5695 5732 5769 5806 5843 5880 5917
+vtxtable band 6 IMD6     I CUSTOM  5732 5765 5828 5840 5866 5740    0    0
+vtxtable powerlevels 3
+vtxtable powervalues 0 1 2
+vtxtable powerlabels 25 200 500
+
+# master
+set gyro_sync_denom = 2
+set dyn_notch_range = LOW
+set dyn_notch_width_percent = 0
+set dyn_notch_q = 200
+set dyn_notch_min_hz = 100
+set acc_calibration = -196,-40,-504
+set mag_hardware = NONE
+set baro_hardware = NONE
+set rssi_channel = 16
+set serialrx_provider = SBUS
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set current_meter = ADC
+set battery_meter = ADC
+set vbat_scale = 100
+set ibatv_scale = 100
+set small_angle = 180
+set pid_process_denom = 2
+set osd_rssi_pos = 2169
+set osd_tim_2_pos = 2519
+set osd_current_pos = 448
+set osd_craft_name_pos = 2507
+set osd_warnings_pos = 14762
+set osd_avg_cell_voltage_pos = 2465
+set scheduler_optimize_rate = ON
+set gyro_rpm_notch_harmonics = 1
+set name = CJJP
+
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 203
+set pitch_rc_rate = 203
+set yaw_rc_rate = 203
+set roll_expo = 67
+set pitch_expo = 67
+set yaw_expo = 31
+set roll_srate = 10
+set pitch_srate = 10
+set yaw_srate = 10
+set tpa_breakpoint = 1500
+
+# end the command batch
+batch end
+
+# 
